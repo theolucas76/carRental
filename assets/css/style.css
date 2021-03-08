@@ -1,0 +1,62 @@
+@font-face {
+    font-family: Roboto-Light;
+    src: url("../fonts/Roboto-Light.ttf") format("TrueType");
+}
+@font-face{
+    font-family: Roboto-Regular;
+    src: url("../fonts/Roboto-Regular.ttf") format("TrueType");
+}
+body{
+    background-image: url(backgroundLocation.png);
+    
+}
+.connexion{
+    background-image: url(backgroundLocation.png);
+    font-family: Roboto-Light;
+    src: url("../fonts/Roboto-Light.ttf") format("TrueType");
+    color: white;
+}
+.modelBody{
+
+    text-align: center;
+    
+}
+.inputCo{
+    background-color: #392962;
+    color: white;
+    border: none;
+}
+.btn-close{
+    
+    opacity: 1;
+}
+.navi{
+
+    font-family: Roboto-Light;
+    src: url("../fonts/Roboto-Light.ttf") format("TrueType");
+    font-size: 25px !important;
+    color: white;
+    
+}
+.title{
+
+    font-family: Roboto-Regular;
+    src: url("../fonts/Roboto-Regular.ttf") format("TrueType");
+}
+
+.navi:hover{
+
+    color: #6048e0;
+}
+
+.btnGradient{
+
+    color: white;
+    background: linear-gradient(#6048e0, #40259e);
+}
+.btnGradient:hover{
+
+    color: #392962;
+    background: linear-gradient(#6048e0, #40259e);
+
+}
