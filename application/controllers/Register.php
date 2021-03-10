@@ -42,8 +42,10 @@
                     "city"      =>$this->input->post("city"),
                     "zipCode"   =>$this->input->post("zipCode") 
                 );
+               
                     $this->Register_model->insert_data($data);  
-                    redirect(base_url() . "home");  
+                    
+                    redirect(base_url() . "profilUser");  
     
             }else{
 

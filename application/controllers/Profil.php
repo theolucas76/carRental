@@ -1,12 +1,12 @@
 <?php 
     defined('BASEPATH') OR exit('No direct script access allowed');
 
-    class Home extends CI_Controller{
+    class Profil extends CI_Controller{
 
         public function __construct(){
 
             parent::__construct();
-            $this->load->model('Home_model');
+            $this->load->model('Profil_model');
             $this->load->helper('url_helper');
 
         }
@@ -14,7 +14,15 @@
         public function index(){
 
             $this->load->view('header.php');
-            $this->load->view('home_page');
+            if(!isset($this->session->mail)){
+
+                $this->load->view('connexion_page');
+
+            }else{
+
+                $this->load->view('profil_page');
+
+            }
             $this->load->view('footer.php');
 
         }
@@ -35,9 +43,9 @@
 
                 );
                 
-                if($this->Home_model->connexion($data)){
+                if($this->Profil_model->connexion($data)){
 
-                    $user = $this->Home_model->connexion($data);  
+                    $user = $this->Profil_model->connexion($data);  
                     
                     $userData = array(
                         'lastname' => $user[0]->lastname,
@@ -49,10 +57,10 @@
 
                     $this->session->set_userdata($userData);
                     $session = $this->session->userdata();
-                    
+                    var_dump($session);
                     if($session['userType'] == null){
 
-                        redirect(base_url() . 'profil');
+                        redirect(base_url() . 'profilUser');
 
                     }else{
 
@@ -67,7 +75,5 @@
 
             }
         }
-
     }
-
 ?>

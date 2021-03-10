@@ -10,7 +10,14 @@
 
         function insert_data($data)  {  
 
-            $this->db->insert("client", $data); 
+
+            if($this->db->insert("client", $data)){
+
+                $this->session->set_userdata($data);
+                $this->session->userdata();
+                redirect(base_url() . 'profilUser');
+
+            }
              
         }
 

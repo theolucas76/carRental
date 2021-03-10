@@ -57,3 +57,6 @@ $route['inscription'] = 'Register/index';
 $route['validation'] = 'Register/form_validation';
 $route['connexionUser'] = 'Home/index';
 $route['userValidation'] = 'Home/form_validation';
+$route['profilUser'] = 'Profil/index';
+$route['profilCheck'] = 'Profil/form_validation';
+$route['admin'] = 'Admin/index';

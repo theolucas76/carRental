@@ -5,11 +5,12 @@
 <html>
     <head>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-        <link href="../assets/css/style.css" rel="stylesheet">
+        <link href="../../assets/css/style.css?rnb=132" rel="stylesheet">
         <meta charset="utf-8">
         <title>Thé'Auto</title>
     </head>
     <body>
+    
         <div class="container-fluid">
             <!-- NAVBAR -->
             <nav class="navbar navbar-expand-lg">
@@ -30,15 +31,29 @@
                                 <a class="nav-link navi" href="#">Services</a>
                             </li>
                             <li class="nav-item">
-                                <button type="button" class="btn navi" data-bs-toggle="modal" data-bs-target="#connexion">Connexion</button>
+                                <?php 
+                                    if(!isset($this->session->mail)){
+                                        ?>
+                                        <a class="nav-link navi" href="<?= base_url()?>profilUser">Connexion</a>
+                                        <?php
+                                    }else{
+                                        ?>
+                                        <a class="nav-link navi" href="
+                                        <?php if($this->session->userType == null){echo base_url().'profilUser';}else{echo base_url().'admin';}?>
+                                        ">Profil</a>
+                                        <?php
+                                    }
+                                ?>
+                                <!--<button type="button" class="btn navi" data-bs-toggle="modal" data-bs-target="#connexion">Connexion</button>-->
                             </li>
                         </ul>
                     </div>
                 </div>
             </nav>
 
-            <!-- MODAL CONNEXION -->
-            <div class="modal fade" id="connexion" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="connexionLabel" aria-hidden="true">
+            <!-- MODAL CONNEXION 
+            <div class="modal fade" id="connexion" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="0" 
+            aria-labelledby="connexionLabel" aria-hidden="false">
                 <div class="modal-dialog">
                     <div class="modal-content connexion">
                         <div class="modal-header">
@@ -48,18 +63,19 @@
                         <div class="modal-body modelBody">
                             <form action="<?=base_url()?>userValidation" method="post">
                                 <label for="mail">Adresse email</label><br>
-                                <input type="email" id="mail" name="mail" class="inputCo" required><br>
-                                <span><?=form_error("mail")?></span>
+                                <input type="email" id="mail" name="mail" class="inputCo" value="<?=set_value("mail")?>"><br>
+                                <span class="text-danger"><?php echo form_error("mail")?></span>
                                 <label for="password">Mot de passe</label><br>
-                                <input type="password" name="password" id="password" class="inputCo" required>
-                                <span><?=form_error("password")?></span>
-                            
+                                <input type="password" name="password" id="password" class="inputCo" value="<?=set_value("password")?>">
+                                <span class="text-danger"><?php echo form_error("password")?></span>
                         </div>
                         <div class="modal-footer">
                             <a href="<?=base_url()?>inscription"><button type="button" class="btn btnGradient text-left">Inscription</button></a>
-                            <button type="submit" class="btn btnGradient">Valider</button>
+                            <button type="submit" class="btn btnGradient" onclick="">Valider</button>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
+            -->
+            
