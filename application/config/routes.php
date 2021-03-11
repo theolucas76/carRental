@@ -61,3 +61,6 @@ $route['profilUser'] = 'Profil/index';
 $route['profilCheck'] = 'Profil/form_validation';
 $route['logOut'] = 'Home/logOut';
 $route['admin'] = 'Admin/index';
+$route['updateAdmin'] = 'Admin/form_validation';
+$route['deleteClient'] = 'Admin/deleteClient';
+$route['deleteCar'] = 'Admin/deleteCar';

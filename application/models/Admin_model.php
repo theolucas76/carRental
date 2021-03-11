@@ -10,7 +10,7 @@
 
         public function getAllCar(){
 
-            $this->db->select('*');
+            
             $this->db->from('voiture');
             $query = $this->db->get();
             return $query->result();
@@ -55,7 +55,7 @@
 
         public function getResa(){
 
-            $this->db->select('client.lastname, client.firstname, date_debut, date_fin, voiture.matriculation, voiture.dayprice');
+            $this->db->select('contrat.id, contrat.id_voiture, contrat.id_client, client.mail, client.lastname, client.firstname, date_debut, date_fin, voiture.matriculation, voiture.dayprice');
             $this->db->from('contrat');
             $this->db->join('voiture', 'voiture.id = contrat.id_voiture');
             $this->db->join('marque', 'marque.id = voiture.id_marque');
@@ -64,5 +64,62 @@
             $query = $this->db->get();
             return $query->result();
 
+        }
+
+        public function getColor(){
+
+            $this->db->select('*');
+            $this->db->from('couleur');
+            $query = $this->db->get();
+            return $query->result();
+
+        }
+
+        public function getBrand(){
+
+            $this->db->select('*');
+            $this->db->from('marque');
+            $query = $this->db->get();
+            return $query->result();
+
+        }
+
+        public function updateClient($data, $id){
+
+            $this->db->where("id", $id);  
+            $this->db->update("client", $data); 
+
+        }
+
+        public function deleteClient($id){
+
+            $this->db->where('id_client', $id);
+            $this->db->delete('contrat');
+            $this->db->where("id", $id);
+            $this->db->delete("client");
+
+        }  
+
+        public function updateCar($data, $id){
+
+            $this->db->where('id', $id);
+            $this->db->update('voiture', $data);
+
+
+        }
+
+        public function deleteCar($id){
+
+            $this->db->where('id_voiture', $id);
+            $this->db->delete('contrat');
+            $this->db->where('id', $id);
+            $this->db->delete('voiture');
+
+        }
+
+        public function updateResa($data, $id){
+
+            $this->db->where('id', $id);
+            $this->db->update('contrat', $data);
         }
     }

@@ -33,3 +33,25 @@ function hideUpdate(id){
     document.getElementById('updateCli'+id).style.display = "none";
 
 }
+
+function updateCar(id){
+
+    document.getElementById('updateCar'+id).style.display = "table-row";
+
+}
+function hideUpdateCar(id){
+
+    document.getElementById('updateCar'+id).style.display = "none";
+
+}
+
+function updateResa(id){
+
+    document.getElementById('updateResa'+id).style.display = "table-row";
+
+}
+function hideUpdateResa(id){
+
+    document.getElementById('updateResa'+id).style.display = "none";
+
+}
