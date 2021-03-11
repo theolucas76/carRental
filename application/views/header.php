@@ -50,7 +50,6 @@
                     </div>
                 </div>
             </nav>
-
             <!-- MODAL CONNEXION 
             <div class="modal fade" id="connexion" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="0" 
             aria-labelledby="connexionLabel" aria-hidden="false">

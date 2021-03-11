@@ -16,6 +16,11 @@ body{
     display: none;
 
 }
+.update{
+
+    display: none;
+
+}
 .connexion{
     background-image: url(backgroundLocation.png);
     font-family: Roboto-Light;

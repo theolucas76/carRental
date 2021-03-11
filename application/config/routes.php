@@ -59,4 +59,5 @@ $route['connexionUser'] = 'Home/index';
 $route['userValidation'] = 'Home/form_validation';
 $route['profilUser'] = 'Profil/index';
 $route['profilCheck'] = 'Profil/form_validation';
+$route['logOut'] = 'Home/logOut';
 $route['admin'] = 'Admin/index';

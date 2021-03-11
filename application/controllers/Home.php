@@ -19,6 +19,16 @@
 
         }
 
+        public function logOut(){
+
+            if($this->input->post('logOut') || $this->input->post('logOutAdmin') ){
+
+                $this->session->sess_destroy();
+                redirect(base_url() ,'refresh');
+
+            }
+        }
+
         public function form_validation(){
 
             $this->load->library('form_validation');  
