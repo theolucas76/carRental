@@ -55,3 +55,67 @@ function hideUpdateResa(id){
     document.getElementById('updateResa'+id).style.display = "none";
 
 }
+
+function newCar(){
+
+    document.getElementById('newCar').style.display = "block";
+
+}
+
+function newResa(){
+
+    document.getElementById('newResa').style.display = "block";
+
+}
+
+function allCar(){
+
+    document.getElementById('allCar').style.display = "block";
+    document.getElementById('searchCar').style.display = "none";
+
+}
+
+function searchCar(){
+
+    document.getElementById('allCar').style.display = "none";
+    document.getElementById('searchCar').style.display = "block";
+
+}
+
+function allClient(){
+
+    document.getElementById('allClient').style.display = "block";
+    document.getElementById('searchCar').style.display = "none";
+
+}
+
+function searchClient(){
+
+    document.getElementById('searchClient').style.display = "block";
+    document.getElementById('allClient').style.display = "none";
+
+}
+
+function allResa(){
+
+    document.getElementById('allResa').style.display = "block";
+    document.getElementById('searchResa').style.display = "none";
+
+}
+
+function searchResa(){
+
+    document.getElementById('searchResa').style.display = "block";
+    document.getElementById('allResa').style.display = "none";
+}
+
+function updateProfil(){
+
+    document.getElementById('modifProfil').style.display = "block";
+    document.getElementById('profil').style.display = "none";
+}
+
+function showFormResa(){
+
+    document.getElementById('reserv').style.display = "block";
+}

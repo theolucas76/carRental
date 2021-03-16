@@ -11,24 +11,24 @@
     </head>
     <body>
     
-        <div class="container-fluid">
+        <div class="container-fluid min-vh-100">
             <!-- NAVBAR -->
             <nav class="navbar navbar-expand-lg">
                 <div class="container-fluid">
                     <a class="navbar-brand navi" href="#">Thé'Auto</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
+                        <span class="navbar-toggler-icon bg-white"></span>
                     </button>
                     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                         <ul class="navbar-nav ">
                             <li class="nav-item">
-                                <a class="nav-link active navi" aria-current="page" href="home">Accueil</a>
+                                <a class="nav-link navi" aria-current="page" href="home">Accueil</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link navi" href="<?=base_url()?>voiture">Voitures</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link navi" href="#">Services</a>
+                                <a class="nav-link navi" href="<?=base_url()?>contact">Contact</a>
                             </li>
                             <li class="nav-item">
                                 <?php 
@@ -44,37 +44,9 @@
                                         <?php
                                     }
                                 ?>
-                                <!--<button type="button" class="btn navi" data-bs-toggle="modal" data-bs-target="#connexion">Connexion</button>-->
                             </li>
                         </ul>
                     </div>
                 </div>
             </nav>
-            <!-- MODAL CONNEXION 
-            <div class="modal fade" id="connexion" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="0" 
-            aria-labelledby="connexionLabel" aria-hidden="false">
-                <div class="modal-dialog">
-                    <div class="modal-content connexion">
-                        <div class="modal-header">
-                            <h5 class="modal-title title" id="connexionLabel">Connexion</h5>
-                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body modelBody">
-                            <form action="<?=base_url()?>userValidation" method="post">
-                                <label for="mail">Adresse email</label><br>
-                                <input type="email" id="mail" name="mail" class="inputCo" value="<?=set_value("mail")?>"><br>
-                                <span class="text-danger"><?php echo form_error("mail")?></span>
-                                <label for="password">Mot de passe</label><br>
-                                <input type="password" name="password" id="password" class="inputCo" value="<?=set_value("password")?>">
-                                <span class="text-danger"><?php echo form_error("password")?></span>
-                        </div>
-                        <div class="modal-footer">
-                            <a href="<?=base_url()?>inscription"><button type="button" class="btn btnGradient text-left">Inscription</button></a>
-                            <button type="submit" class="btn btnGradient" onclick="">Valider</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            -->
             

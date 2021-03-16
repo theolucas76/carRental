@@ -49,24 +49,36 @@
             $this->db->join('marque', 'marque.id = voiture.id_marque');
             $this->db->join('modele', 'modele.id = voiture.id_modele');
             $this->db->join('carburant', 'carburant.id = voiture.id_carburant');
+            $this->db->group_by('marque.brand');
             $query = $this->db->get();
             return $query->result();
 
         }
 
         public function getAvailableCar(){
-
-            $this->db->from('contrat');
-            $this->db->join('voiture', 'voiture.id = contrat.id_voiture');
+            $date = date('Y-m-d');
+            $this->db->from('voiture');
+            $this->db->join('contrat', 'voiture.id = contrat.id_voiture', 'left');
             $this->db->join('marque', 'marque.id = voiture.id_marque');
             $this->db->join('modele', 'modele.id = voiture.id_modele');
             $this->db->join('carburant', 'carburant.id = voiture.id_carburant');
             $this->db->join('couleur', 'couleur.id = voiture.id_couleur');
-            $date = date('Y-m-d');
-            $this->db->where('date_fin <', $date);
+            $this->db->where('date_fin = ', null);
+            $this->db->or_where('date_fin < ', $date);
+            $this->db->group_by('voiture.id');
+    
             $query = $this->db->get();
             return $query->result();
 
+
+        }
+        public function insertResa($data){
+
+            if($this->db->insert('contrat', $data)){
+
+                redirect(base_url(). 'profilUser');
+
+            }
 
         }
 

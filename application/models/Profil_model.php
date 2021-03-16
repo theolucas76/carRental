@@ -5,7 +5,7 @@
         public function __construct(){
 
             $this->load->database();
-
+            
         }
 
         public function connexion($data){
@@ -31,5 +31,7 @@
                 return $co->result();
             }
         }
+
+        
     }
 ?>

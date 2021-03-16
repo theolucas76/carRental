@@ -7,14 +7,16 @@
 
             parent::__construct();
             $this->load->model('Home_model');
+            $this->load->model("Admin_model");  
             $this->load->helper('url_helper');
 
         }
 
         public function index(){
-
+                
+            $data['cars'] = $this->Home_model->getCar();
             $this->load->view('header.php');
-            $this->load->view('home_page');
+            $this->load->view('home_page', $data);
             $this->load->view('footer.php');
 
         }
@@ -25,7 +27,7 @@
 
                 $this->session->sess_destroy();
                 redirect(base_url() ,'refresh');
-
+                
             }
         }
 

@@ -11,6 +11,9 @@ body{
     color: white;
     
 }
+.backG{
+    background: linear-gradient(#6048e0, #40259e);
+}
 .admin{
 
     display: none;
@@ -46,7 +49,7 @@ body{
     font-family: Roboto-Light;
     src: url("../fonts/Roboto-Light.ttf") format("TrueType");
     font-size: 25px !important;
-    color: white;
+    color: white !important;
     
 }
 .title{
@@ -57,7 +60,7 @@ body{
 
 .navi:hover{
 
-    color: #6048e0;
+    color: #6048e0 !important;
 }
 
 .btnGradient{
@@ -70,4 +73,30 @@ body{
     color: #392962;
     background: linear-gradient(#6048e0, #40259e);
 
+}
+.reserv{
+
+    display: none;
+
+}
+
+.foot{
+
+    color: #392962 !important;
+}
+
+.footLink{
+
+    text-decoration: none;
+    color: white;
+}
+.footLink:hover{
+
+    color: #392962 !important;
+}
+
+.fontText{
+
+    font-family: Roboto-Light;
+    src: url("../fonts/Roboto-Light.ttf") format("TrueType");
 }
