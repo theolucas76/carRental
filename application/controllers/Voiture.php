@@ -12,12 +12,18 @@
 
         }
 
-        public function index(){
+        public function index($dataSearchCar = array()){
 
             $data['cars'] = $this->Home_model->getAllCar();
+            $data['carss'] = $this->Home_model->getAllCar();
             $data['available'] = $this->Home_model->getAvailableCar();
             $data['services'] = $this->Admin_model->getService();
-
+            $data['searchCars'] = $this->Admin_model->searchCar($dataSearchCar);
+            $data['colors'] = $this->Admin_model->getColor();
+            $data['brands'] = $this->Admin_model->getBrand();
+            $data['models'] = $this->Admin_model->getModel();
+            $data['fuels'] = $this->Admin_model->getCarbu();
+            
             $this->load->view('header.php');
             $this->load->view('voiture_page', $data);
             $this->load->view('footer.php');
@@ -56,9 +62,33 @@
                 }
             }
 
+            if($this->input->post('searchCar')){
+
+                $this->form_validation->set_rules("matriculation", "matriculation", "required");
+                $this->form_validation->set_rules("transmission", "transmission", "required");
+                $this->form_validation->set_rules("id_couleur", "id_couleur", "required");
+                $this->form_validation->set_rules("id_marque", "id_marque", "required");
+                $this->form_validation->set_rules("id_modele", "id_modele", "required");
+                $this->form_validation->set_rules("id_carburant", "id_carburant");
+
+                if($this->form_validation->run()){
+                    
+                    $dataSearchCar = array(
+                        
+                        "matriculation" => $this->input->post('matriculation'),
+                        "transmission" => $this->input->post('transmission'),
+                        "id_couleur" => $this->input->post('id_couleur'),
+                        "id_marque" => $this->input->post('id_marque'),
+                        "id_modele" => $this->input->post('id_modele'),
+                        "id_carburant" => $this->input->post('id_carburant')
+
+                    );
+
+                    $this->Admin_model->searchCar($dataSearchCar);
+                    $this->index($dataSearchCar);
+
+                }
+            }
         }
-            
-
     }
-
 ?>

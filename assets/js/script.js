@@ -82,6 +82,13 @@ function searchCar(){
 
 }
 
+function searchCar2(){
+
+    document.getElementById('manu').style.display = "none";
+    document.getElementById('searchCar2').style.display = "block";
+
+}
+
 function allClient(){
 
     document.getElementById('allClient').style.display = "block";
@@ -118,4 +125,10 @@ function updateProfil(){
 function showFormResa(){
 
     document.getElementById('reserv').style.display = "block";
+}
+
+function alert(){
+
+    window.alert('Vous devez être connecté');
+
 }

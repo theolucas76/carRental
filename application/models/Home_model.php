@@ -56,6 +56,7 @@
         }
 
         public function getAvailableCar(){
+            
             $date = date('Y-m-d');
             $this->db->from('voiture');
             $this->db->join('contrat', 'voiture.id = contrat.id_voiture', 'left');

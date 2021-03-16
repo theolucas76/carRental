@@ -24,16 +24,16 @@
             }
         ?>
     </div>
-    <div id="modifProfil" class="admin m-5">
+    <div id="modifProfil" class="admin m-5 col-6">
         <form action="profilCheck" method="post">
-            <input type="text" class="btnGradient" name="lastname" value="<?=$this->session->lastname?>">
-            <input type="text" class="btnGradient" name="firstname" value="<?=$this->session->firstname?>">
-            <input type="text"  class="btnGradient"name="mail" value="<?=$this->session->mail?>">
-            <input type="password" class="btnGradient" name="password" value="<?=$this->session->password?>">
-            <input type="text" class="btnGradient" name="address" value="<?=$this->session->address?>">
-            <input type="text" class="btnGradient" name="city" value="<?=$this->session->city?>">
-            <input type="text" class="btnGradient" name="zipCode" value="<?=$this->session->zipCode?>">
-            <input type="submit" class="btnGradient" name="modifProfil" value="Modifier">
+            <input type="text" class="btnGradient mb-3" name="lastname" value="<?=$this->session->lastname?>"><br>
+            <input type="text" class="btnGradient mb-3" name="firstname" value="<?=$this->session->firstname?>"><br>
+            <input type="text"  class="btnGradient mb-3" name="mail" value="<?=$this->session->mail?>"><br>
+            <input type="password" class="btnGradient mb-3" name="password" value="<?=$this->session->password?>"><br>
+            <input type="text" class="btnGradient mb-3" name="address" value="<?=$this->session->address?>"><br>
+            <input type="text" class="btnGradient mb-3" name="city" value="<?=$this->session->city?>"><br>
+            <input type="text" class="btnGradient mb-3" name="zipCode" value="<?=$this->session->zipCode?>"><br>
+            <input type="submit" class="btnGradient mb-3" name="modifProfil" value="Modifier"><br>
             <input type="hidden"  name="hid_idCli" value="<?=$this->session->id?>">
         </form>
         </div>
